@@ -51,11 +51,19 @@ async def initialize_client():
     except FileNotFoundError:
         logger.info("No cookies file found, logging in with credentials...")
         try:
+            # await client.login(
+            #     auth_info_1=username,
+            #     auth_info_2=email,
+            #     password=password
+            # )
+
             await client.login(
-                auth_info_1=username,
-                auth_info_2=email,
-                password=password
+                auth_info_1='study37403',
+                auth_info_2='advestdigital@gmail.com',
+                password='TykrzmR@73'
             )
+
+
             await client.save_cookies('cookies.json')
             logger.info("Logged in and saved cookies successfully")
         except AccountLocked:
